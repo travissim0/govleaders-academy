@@ -1,26 +1,27 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
-export default function Icon() {
+export default async function Icon() {
+  const logoData = await readFile(join(process.cwd(), "public/images/logo-monogram.png"));
+  const logoBase64 = `data:image/png;base64,${logoData.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
         style={{
-          fontSize: 18,
-          background: "#1F3A5F",
           width: "100%",
           height: "100%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          color: "#C8A951",
-          fontWeight: 700,
-          borderRadius: 6,
+          background: "white",
         }}
       >
-        G
+        <img src={logoBase64} width={28} height={28} style={{ objectFit: "contain" }} />
       </div>
     ),
     { ...size }

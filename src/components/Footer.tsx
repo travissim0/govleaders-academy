@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { NewsletterSignup } from "./NewsletterSignup";
 
 const footerLinks = {
@@ -24,9 +25,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-4">
-              <span className="font-heading text-xl font-bold text-white">
-                GovLeaders<span className="text-gold"> Academy</span>
-              </span>
+              <Image
+                src="/images/logo-full.png"
+                alt="GovLeaders Academy"
+                width={200}
+                height={44}
+                className="h-10 w-auto brightness-0 invert"
+              />
             </Link>
             <p className="text-sm text-gray-300 mb-6 max-w-sm">
               Professional online training designed for public-sector leaders.
