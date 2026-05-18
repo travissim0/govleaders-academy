@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Wrench, FileCheck, GraduationCap } from "lucide-react";
+import { Wrench, FileCheck, GraduationCap, ArrowRight } from "lucide-react";
 
 const services = [
   {
@@ -24,39 +24,43 @@ const services = [
 
 export function ServicesPreview() {
   return (
-    <section className="bg-gray-light py-16 sm:py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-navy mb-4">
-            Beyond the Catalog
+    <section className="bg-white py-16 sm:py-20 border-t border-gray-100">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-8">
+          <p className="text-sm font-semibold text-slate uppercase tracking-wider mb-2">Additional Services</p>
+          <h2 className="text-2xl sm:text-3xl font-heading font-bold text-navy mb-3">
+            Beyond the Course Catalog
           </h2>
-          <p className="text-lg text-slate max-w-2xl mx-auto">
-            Additional services to support your organization and your career.
+          <p className="text-slate max-w-xl mx-auto text-sm">
+            GLA also offers specialized services to support organizations and individual professionals.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-3 gap-4 mb-8">
           {services.map((service) => (
             <Link
               key={service.title}
               href={service.href}
-              className="group bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg hover:border-gold/30 transition-all"
+              className="group flex items-start gap-3 p-4 rounded-lg border border-gray-200 hover:border-gold/30 hover:bg-gray-light/50 transition-all"
             >
-              <service.icon size={28} className="text-navy mb-4" />
-              <h3 className="font-heading font-semibold text-lg text-navy mb-2 group-hover:text-navy-light transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-sm text-slate">{service.description}</p>
+              <service.icon size={20} className="text-slate mt-0.5 shrink-0 group-hover:text-navy transition-colors" />
+              <div>
+                <h3 className="font-heading font-semibold text-sm text-navy mb-1 group-hover:text-navy-light transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-xs text-slate leading-relaxed">{service.description}</p>
+              </div>
             </Link>
           ))}
         </div>
 
-        <div className="text-center mt-10">
+        <div className="text-center">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 px-6 py-3 border-2 border-navy text-navy font-semibold rounded-lg hover:bg-navy hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-navy-light transition-colors"
           >
             Learn More About Our Services
+            <ArrowRight size={16} />
           </Link>
         </div>
       </div>

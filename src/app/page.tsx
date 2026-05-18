@@ -16,6 +16,7 @@ export default function Home() {
     <>
       <Hero />
       <StatsStrip />
+      {/* Course Discovery Zone — Training Tracks + Featured Courses as one connected block */}
       <TrainingTracks />
       <FeaturedCourses />
       <HowItWorks />
