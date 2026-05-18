@@ -16,17 +16,32 @@ const inter = Inter({
   display: "swap",
 });
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://govleadersacademy.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: {
     default: "GovLeaders Academy | Online Training for Public-Sector Leaders",
     template: "%s | GovLeaders Academy",
   },
   description:
     "Professional online training courses designed for public-sector leaders. Special districts, local government, ethics, compliance, and leadership development.",
+  keywords: [
+    "public sector training",
+    "government leadership",
+    "special district training",
+    "online courses",
+    "Texas local government",
+    "ethics compliance training",
+    "professional development",
+  ],
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "GovLeaders Academy",
+  },
+  twitter: {
+    card: "summary_large_image",
   },
 };
 
