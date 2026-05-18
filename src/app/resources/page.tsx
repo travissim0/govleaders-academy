@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
 import { BlogCardItem, placeholderPosts } from "@/components/BlogCard";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
+import { getAllPosts } from "@/lib/sanity";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Resources",
   description: "Articles, guides, and insights for public-sector professionals. Stay informed on governance, compliance, and leadership.",
 };
 
-export default function ResourcesPage() {
-  const posts = placeholderPosts;
+export default async function ResourcesPage() {
+  const sanityPosts = await getAllPosts();
+  const posts = sanityPosts.length > 0 ? sanityPosts : placeholderPosts;
 
   return (
     <>

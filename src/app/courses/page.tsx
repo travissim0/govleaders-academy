@@ -2,13 +2,18 @@ import type { Metadata } from "next";
 import { TrainingTracks } from "@/components/TrainingTracks";
 import { FeaturedCourses } from "@/components/CourseCard";
 import { ExternalLink } from "lucide-react";
+import { getFeaturedCourses } from "@/lib/sanity";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Courses",
   description: "Browse online training courses for public-sector leaders. Special districts, local government, ethics, compliance, and leadership development.",
 };
 
-export default function CoursesPage() {
+export default async function CoursesPage() {
+  const courses = await getFeaturedCourses();
+
   return (
     <>
       <section className="bg-navy py-16 sm:py-20">
@@ -24,7 +29,7 @@ export default function CoursesPage() {
       </section>
 
       <TrainingTracks />
-      <FeaturedCourses />
+      <FeaturedCourses courses={courses} />
 
       <section className="bg-white py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

@@ -10,20 +10,27 @@ import { ResourcesPreview } from "@/components/ResourcesPreview";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { Credibility } from "@/components/Credibility";
 import { FinalCTA } from "@/components/FinalCTA";
+import { getFeaturedCourses, getFeaturedPosts } from "@/lib/sanity";
 
-export default function Home() {
+export const revalidate = 60;
+
+export default async function Home() {
+  const [courses, posts] = await Promise.all([
+    getFeaturedCourses(),
+    getFeaturedPosts(),
+  ]);
+
   return (
     <>
       <Hero />
       <StatsStrip />
-      {/* Course Discovery Zone — Training Tracks + Featured Courses as one connected block */}
       <TrainingTracks />
-      <FeaturedCourses />
+      <FeaturedCourses courses={courses} />
       <HowItWorks />
       <WhoWeServe />
       <WhyGLA />
       <ServicesPreview />
-      <ResourcesPreview />
+      <ResourcesPreview posts={posts} />
       <NewsletterSignup />
       <Credibility />
       <FinalCTA />

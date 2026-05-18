@@ -18,7 +18,8 @@ export interface Post {
   slug: { current: string };
   category: string;
   excerpt: string;
-  body: unknown[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  body: any[];
   featuredImage?: SanityImage;
   author: string;
   publishDate: string;

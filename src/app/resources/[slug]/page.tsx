@@ -1,21 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Calendar, User } from "lucide-react";
+import { PortableText } from "@portabletext/react";
+import { getPostBySlug } from "@/lib/sanity";
 import { placeholderPosts } from "@/components/BlogCard";
+
+export const revalidate = 60;
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const post = placeholderPosts.find((p) => p.slug.current === slug);
+  const post = await getPostBySlug(slug) ?? placeholderPosts.find((p) => p.slug.current === slug);
 
   return {
-    title: post?.title || "Resource",
-    description: post?.excerpt || "Read this resource from GovLeaders Academy.",
+    title: post?.seoTitle || post?.title || "Resource",
+    description: post?.seoDescription || post?.excerpt || "Read this resource from GovLeaders Academy.",
   };
 }
 
 export default async function ResourcePost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = placeholderPosts.find((p) => p.slug.current === slug);
+  const sanityPost = await getPostBySlug(slug);
+  const post = sanityPost ?? placeholderPosts.find((p) => p.slug.current === slug);
 
   if (!post) {
     return (
@@ -71,11 +76,17 @@ export default async function ResourcePost({ params }: { params: Promise<{ slug:
 
       <article className="bg-white py-12 sm:py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-navy max-w-none">
-          <p className="text-lg text-slate leading-relaxed">{post.excerpt}</p>
-          <p className="text-slate mt-6">
-            This is a placeholder article. When Sanity CMS is connected, full rich-text
-            content will render here using Portable Text.
-          </p>
+          {post.body && Array.isArray(post.body) && post.body.length > 0 ? (
+            <PortableText value={post.body} />
+          ) : (
+            <>
+              <p className="text-lg text-slate leading-relaxed">{post.excerpt}</p>
+              <p className="text-slate mt-6">
+                This is a placeholder article. When content is added through Sanity Studio,
+                full rich-text content will render here.
+              </p>
+            </>
+          )}
         </div>
       </article>
     </>
