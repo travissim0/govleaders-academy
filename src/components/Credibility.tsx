@@ -1,23 +1,29 @@
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, ArrowRight } from "lucide-react";
 
 const credentials = [
-  "Decades of combined public-sector leadership experience",
-  "Courses developed by practitioners who've served in government roles",
-  "Content aligned with state-specific legal and regulatory frameworks",
-  "Trusted by special districts, municipalities, and public agencies",
+  "Courses built around real-world application, not academic theory",
+  "Curriculum developed by professionals with direct public-sector experience",
+  "Content aligned with Texas legal and regulatory frameworks",
+  "Structured for board members, district staff, and public-sector professionals",
 ];
 
 export function Credibility() {
   return (
-    <section className="bg-gray-light py-16 sm:py-20">
+    <section className="bg-gray-light py-16 sm:py-20 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
+          <p className="text-sm font-semibold text-gold uppercase tracking-wider mb-3">Move Forward. Lead Better.</p>
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-navy mb-4">
-            Built by Public-Sector Professionals
+            Built for Public-Sector Professionals
           </h2>
-          <p className="text-lg text-slate mb-8">
-            GovLeaders Academy was founded on a simple belief: public-sector leaders deserve
-            training that&apos;s built for them — not adapted from the corporate world.
+          <p className="text-lg text-slate mb-3">
+            GovLeaders Academy exists to help public-sector leaders and those who support
+            them move from uncertainty to competence, from fragmented knowledge to structured
+            understanding, and from reactive decision-making to informed leadership.
+          </p>
+          <p className="text-slate mb-8">
+            Our mission is to advance the public sector by developing knowledgeable, capable
+            leaders through relevant education and training.
           </p>
           <div className="grid sm:grid-cols-2 gap-4 text-left">
             {credentials.map((item) => (

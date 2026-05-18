@@ -2,7 +2,7 @@ import { BookOpen, Clock, Globe, TrendingUp } from "lucide-react";
 
 const stats = [
   { icon: BookOpen, value: "21", label: "Courses" },
-  { icon: Clock, value: "130+", label: "Hours of Content" },
+  { icon: Clock, value: "110+", label: "Contact Hours" },
   { icon: Globe, value: "100%", label: "Online" },
   { icon: TrendingUp, value: "Growing", label: "Catalog" },
 ];

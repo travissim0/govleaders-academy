@@ -5,11 +5,11 @@ import type { Course } from "@/types";
 const placeholderCourses: Course[] = [
   {
     _id: "1",
-    title: "Special District Board Governance Essentials",
-    slug: { current: "board-governance" },
-    shortDescription: "Master the fundamentals of board governance, fiduciary duties, and meeting procedures for special district board members.",
-    category: "Special Districts",
-    audience: "Board Members",
+    title: "How Texas Government Actually Works: A Practical Guide for Public Leaders",
+    slug: { current: "texas-government" },
+    shortDescription: "A practical introduction to Texas government structure, authority, and how public leadership actually functions at the state and local level.",
+    category: "Flagship Series",
+    audience: "All Public Leaders",
     contactHours: 8,
     level: "Foundations",
     learnworldsUrl: "https://learn.govleadersacademy.com",
@@ -17,61 +17,61 @@ const placeholderCourses: Course[] = [
   },
   {
     _id: "2",
-    title: "Texas Open Meetings Act Compliance",
-    slug: { current: "open-meetings" },
-    shortDescription: "Comprehensive training on the Texas Open Meetings Act requirements, common violations, and best practices.",
-    category: "Ethics & Compliance",
-    audience: "All Public Officials",
-    contactHours: 4,
+    title: "Special Purpose Districts Explained: Structure, Authority, and Governance",
+    slug: { current: "special-districts" },
+    shortDescription: "Understand the structure, legal authority, and governance responsibilities of special purpose districts in Texas.",
+    category: "Flagship Series",
+    audience: "Board Members & Staff",
+    contactHours: 8,
     level: "Foundations",
     learnworldsUrl: "https://learn.govleadersacademy.com",
     featured: true,
   },
   {
     _id: "3",
-    title: "Public Sector Leadership Development",
-    slug: { current: "leadership-dev" },
-    shortDescription: "Build essential leadership competencies tailored for the unique dynamics of public-sector management.",
-    category: "Public Sector Leadership",
-    audience: "Managers & Directors",
-    contactHours: 12,
-    level: "Intermediate",
-    learnworldsUrl: "https://learn.govleadersacademy.com",
-    featured: true,
-  },
-  {
-    _id: "4",
-    title: "Water District Operations & Compliance",
-    slug: { current: "water-district-ops" },
-    shortDescription: "Operational best practices and regulatory compliance essentials for MUD, WCID, and water district leadership.",
-    category: "Water / MUD / WCID",
-    audience: "District Directors",
-    contactHours: 10,
-    level: "Foundations",
-    learnworldsUrl: "https://learn.govleadersacademy.com",
-    featured: true,
-  },
-  {
-    _id: "5",
-    title: "ESD Commissioner Leadership",
-    slug: { current: "esd-leadership" },
-    shortDescription: "Governance, budgeting, and leadership training designed for Emergency Services District commissioners.",
-    category: "Emergency Services Districts",
-    audience: "ESD Commissioners",
+    title: "The Board Member Playbook: Roles, Responsibilities, and Expectations",
+    slug: { current: "board-member-playbook" },
+    shortDescription: "A comprehensive guide to what board members need to know about their roles, duties, and professional expectations.",
+    category: "New Board Member Series",
+    audience: "New Board Members",
     contactHours: 6,
     level: "Foundations",
     learnworldsUrl: "https://learn.govleadersacademy.com",
     featured: true,
   },
   {
-    _id: "6",
-    title: "Public Information Act Essentials",
-    slug: { current: "pia-essentials" },
-    shortDescription: "Navigate Texas Public Information Act requirements, records requests, and compliance obligations for public officials.",
-    category: "Ethics & Compliance",
+    _id: "4",
+    title: "Open Meetings and Public Records: Staying Compliant and Avoiding Mistakes",
+    slug: { current: "open-meetings" },
+    shortDescription: "Navigate open meetings requirements, public records obligations, and common compliance pitfalls for public officials.",
+    category: "Governance & Legal Series",
     audience: "All Public Officials",
-    contactHours: 5,
+    contactHours: 6,
     level: "Foundations",
+    learnworldsUrl: "https://learn.govleadersacademy.com",
+    featured: true,
+  },
+  {
+    _id: "5",
+    title: "Inside a MUD: Operations, Infrastructure, and What Drives Decisions",
+    slug: { current: "inside-a-mud" },
+    shortDescription: "Learn how Municipal Utility Districts operate, how infrastructure decisions are made, and what drives day-to-day operations.",
+    category: "Operations & Leadership Series",
+    audience: "District Directors & Staff",
+    contactHours: 6,
+    level: "Intermediate",
+    learnworldsUrl: "https://learn.govleadersacademy.com",
+    featured: true,
+  },
+  {
+    _id: "6",
+    title: "Contract Policing for Water Districts: How Public Safety Partnerships Really Work",
+    slug: { current: "contract-policing" },
+    shortDescription: "Understand how water districts establish and manage contract policing relationships for community public safety.",
+    category: "Standalone",
+    audience: "Board Members & Administrators",
+    contactHours: 4,
+    level: "Intermediate",
     learnworldsUrl: "https://learn.govleadersacademy.com",
     featured: true,
   },
@@ -152,9 +152,10 @@ export function FeaturedCourses({ courses }: { courses?: Course[] }) {
   const displayCourses = courses && courses.length > 0 ? courses : placeholderCourses;
 
   return (
-    <section className="bg-gray-light pt-0 pb-16 sm:pb-20">
+    <section className="bg-gray-light pb-16 sm:pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* View Full Catalog CTA - top */}
+        <div className="w-16 h-0.5 bg-gold/40 mx-auto mb-10" />
+
         <div className="flex items-center justify-between mb-8">
           <div>
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-navy mb-2">
@@ -181,10 +182,8 @@ export function FeaturedCourses({ courses }: { courses?: Course[] }) {
           ))}
         </div>
 
-        {/* Portal callout */}
         <PortalCallout />
 
-        {/* View Full Catalog CTA - bottom */}
         <div className="text-center mt-8">
           <a
             href="https://learn.govleadersacademy.com"
@@ -192,7 +191,7 @@ export function FeaturedCourses({ courses }: { courses?: Course[] }) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-navy-dark font-semibold rounded-lg hover:bg-gold/90 transition-colors"
           >
-            View Full Catalog — 21 Courses, 130+ Hours
+            View Full Catalog — 21 Courses, 110+ Hours
             <ArrowRight size={18} />
           </a>
         </div>
