@@ -1,10 +1,10 @@
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 const credentials = [
-  "Courses built around real-world application, not academic theory",
-  "Curriculum developed by professionals with direct public-sector experience",
+  "Public-sector leadership experience in local government and board governance",
+  "Higher education and course development experience in instructional design",
+  "Practical training design for working adults in public service roles",
   "Content aligned with Texas legal and regulatory frameworks",
-  "Structured for board members, district staff, and public-sector professionals",
 ];
 
 export function Credibility() {
@@ -13,7 +13,7 @@ export function Credibility() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-sm font-semibold text-gold uppercase tracking-wider mb-3">Move Forward. Lead Better.</p>
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-navy mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-4">
             Built for Public-Sector Professionals
           </h2>
           <p className="text-lg text-slate mb-3">
@@ -27,7 +27,7 @@ export function Credibility() {
           </p>
           <div className="grid sm:grid-cols-2 gap-4 text-left">
             {credentials.map((item) => (
-              <div key={item} className="flex items-start gap-3 bg-white rounded-lg p-4 border border-gray-200">
+              <div key={item} className="flex items-start gap-3 bg-white rounded-[6px] p-4 border border-gray-200">
                 <CheckCircle size={20} className="text-gold shrink-0 mt-0.5" />
                 <span className="text-sm text-navy">{item}</span>
               </div>

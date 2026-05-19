@@ -1,19 +1,14 @@
 import type { Metadata } from "next";
-import { Montserrat, Inter } from "next/font/google";
+import { Raleway } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
-const montserrat = Montserrat({
-  variable: "--font-heading",
+const raleway = Raleway({
+  variable: "--font-raleway",
   subsets: ["latin"],
   display: "swap",
-});
-
-const inter = Inter({
-  variable: "--font-body",
-  subsets: ["latin"],
-  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://govleadersacademy.vercel.app";
@@ -25,15 +20,18 @@ export const metadata: Metadata = {
     template: "%s | GovLeaders Academy",
   },
   description:
-    "Professional online training courses designed for public-sector leaders. Special districts, local government, ethics, compliance, and leadership development.",
+    "Practical online training, resources, and development solutions for public-sector leaders, board members, special districts, water districts, and local government professionals.",
   keywords: [
     "public sector training",
-    "government leadership",
     "special district training",
-    "online courses",
-    "Texas local government",
-    "ethics compliance training",
-    "professional development",
+    "water district board training",
+    "MUD board training",
+    "WCID training",
+    "Texas local government training",
+    "public sector leadership training",
+    "board member training",
+    "public governance training",
+    "local government professional development",
   ],
   openGraph: {
     type: "website",
@@ -51,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${inter.variable}`}>
+    <html lang="en" className={raleway.variable}>
       <body className="min-h-screen flex flex-col antialiased">
         <Header />
         <main className="flex-1">{children}</main>

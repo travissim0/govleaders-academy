@@ -44,7 +44,7 @@ const placeholderCourses: Course[] = [
     title: "Open Meetings and Public Records: Staying Compliant and Avoiding Mistakes",
     slug: { current: "open-meetings" },
     shortDescription: "Navigate open meetings requirements, public records obligations, and common compliance pitfalls for public officials.",
-    category: "Governance & Legal Series",
+    category: "Governance and Legal Series",
     audience: "All Public Officials",
     contactHours: 6,
     level: "Foundations",
@@ -56,7 +56,7 @@ const placeholderCourses: Course[] = [
     title: "Inside a MUD: Operations, Infrastructure, and What Drives Decisions",
     slug: { current: "inside-a-mud" },
     shortDescription: "Learn how Municipal Utility Districts operate, how infrastructure decisions are made, and what drives day-to-day operations.",
-    category: "Operations & Leadership Series",
+    category: "Operations and Leadership Series",
     audience: "District Directors & Staff",
     contactHours: 6,
     level: "Intermediate",
@@ -83,7 +83,7 @@ function CourseCardItem({ course }: { course: Course }) {
       href={course.learnworldsUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all hover:border-gold/40 hover:-translate-y-1"
+      className="group bg-white rounded-[6px] border border-gray-200 overflow-hidden hover:shadow-xl transition-all hover:border-gold/40 hover:-translate-y-1"
     >
       <div className="h-36 bg-gradient-to-br from-navy to-navy-light relative flex items-end p-4">
         <div className="absolute top-3 right-3 flex gap-1.5">
@@ -91,7 +91,7 @@ function CourseCardItem({ course }: { course: Course }) {
             {course.level}
           </span>
         </div>
-        <h3 className="font-heading font-semibold text-white text-sm leading-tight pr-8">
+        <h3 className="font-semibold text-white text-sm leading-tight pr-8">
           {course.title}
         </h3>
       </div>
@@ -122,17 +122,17 @@ function CourseCardItem({ course }: { course: Course }) {
 
 function PortalCallout() {
   return (
-    <div className="bg-navy/5 border border-navy/10 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-      <div className="w-10 h-10 bg-navy rounded-lg flex items-center justify-center shrink-0">
+    <div className="bg-navy/5 border border-navy/10 rounded-[6px] p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      <div className="w-10 h-10 bg-navy rounded-[6px] flex items-center justify-center shrink-0">
         <Monitor size={20} className="text-white" />
       </div>
       <div className="flex-1">
-        <h4 className="font-heading font-semibold text-navy text-sm mb-1">
+        <h4 className="font-semibold text-navy text-sm mb-1">
           Enrollment, certificates, and progress tracking happen in the Learning Portal
         </h4>
         <p className="text-xs text-slate">
-          When you enroll in a course, you&apos;ll access your learner dashboard, complete
-          training modules, take assessments, and earn certificates — all through our
+          When you enroll in a course, you will access your learner dashboard, complete
+          training modules, take assessments, and earn certificates through our
           dedicated learning platform.
         </p>
       </div>
@@ -158,7 +158,7 @@ export function FeaturedCourses({ courses }: { courses?: Course[] }) {
 
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-navy mb-2">
+            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-2">
               Featured Courses
             </h2>
             <p className="text-slate">
@@ -169,7 +169,7 @@ export function FeaturedCourses({ courses }: { courses?: Course[] }) {
             href="https://learn.govleadersacademy.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-navy text-white text-sm font-semibold rounded-lg hover:bg-navy-light transition-colors"
+            className="hidden sm:inline-flex items-center gap-2 px-7 py-3 bg-navy text-white text-[16px] font-semibold rounded-[6px] hover:bg-navy-dark transition-colors"
           >
             View Full Catalog
             <ArrowRight size={16} />
@@ -189,9 +189,9 @@ export function FeaturedCourses({ courses }: { courses?: Course[] }) {
             href="https://learn.govleadersacademy.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-navy-dark font-semibold rounded-lg hover:bg-gold/90 transition-colors"
+            className="inline-flex items-center gap-2 px-9 py-4 bg-navy text-white text-[17px] font-semibold rounded-[6px] hover:bg-navy-dark transition-colors"
           >
-            View Full Catalog — 21 Courses, 110+ Hours
+            View Full Catalog: 21 Courses, 110+ Contact Hours
             <ArrowRight size={18} />
           </a>
         </div>

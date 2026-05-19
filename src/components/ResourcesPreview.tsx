@@ -6,7 +6,7 @@ import type { Post } from "@/types";
 function ResourceCard({ post }: { post: Post }) {
   return (
     <Link
-      href={`/resources/${post.slug.current}`}
+      href={`/insights/${post.slug.current}`}
       className="group"
     >
       <article className="flex flex-col h-full">
@@ -44,13 +44,13 @@ export function ResourcesPreview({ posts }: { posts?: Post[] }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between mb-10">
           <div>
-            <p className="text-sm font-semibold text-gold uppercase tracking-wider mb-2">Resources</p>
+            <p className="text-sm font-semibold text-gold uppercase tracking-wider mb-2">Insights</p>
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-navy">
-              Insights & Guides
+              Insights and Guides
             </h2>
           </div>
           <Link
-            href="/resources"
+            href="/insights"
             className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-navy-light transition-colors"
           >
             View All <ArrowRight size={16} />
@@ -67,10 +67,10 @@ export function ResourcesPreview({ posts }: { posts?: Post[] }) {
 
         <div className="text-center mt-10 sm:hidden">
           <Link
-            href="/resources"
+            href="/insights"
             className="inline-flex items-center gap-2 text-sm font-semibold text-navy"
           >
-            View All Resources <ArrowRight size={16} />
+            View All Insights <ArrowRight size={16} />
           </Link>
         </div>
       </div>

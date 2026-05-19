@@ -8,8 +8,9 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/courses", label: "Courses" },
-  { href: "/resources", label: "Resources" },
   { href: "/services", label: "Services" },
+  { href: "/insights", label: "Insights" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -44,7 +45,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-slate hover:text-navy transition-colors"
+                className="text-[15px] font-semibold text-dark-text hover:text-navy transition-colors"
               >
                 {link.label}
               </Link>
@@ -53,7 +54,7 @@ export function Header() {
               href="https://learn.govleadersacademy.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-5 py-2.5 bg-navy text-white text-sm font-semibold rounded-lg hover:bg-navy-light transition-colors"
+              className="inline-flex items-center px-7 py-3 bg-navy text-white text-[16px] font-semibold rounded-[6px] hover:bg-navy-dark transition-colors"
             >
               Learning Portal
             </a>
@@ -76,7 +77,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="block text-sm font-medium text-slate hover:text-navy transition-colors"
+                className="block text-[15px] font-semibold text-dark-text hover:text-navy transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -86,7 +87,7 @@ export function Header() {
               href="https://learn.govleadersacademy.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full text-center px-5 py-2.5 bg-navy text-white text-sm font-semibold rounded-lg hover:bg-navy-light transition-colors"
+              className="block w-full text-center px-7 py-3 bg-navy text-white text-[16px] font-semibold rounded-[6px] hover:bg-navy-dark transition-colors"
             >
               Learning Portal
             </a>

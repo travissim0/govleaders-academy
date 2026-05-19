@@ -5,7 +5,10 @@ import { FeaturedCourses } from "@/components/CourseCard";
 import { HowItWorks } from "@/components/HowItWorks";
 import { WhoWeServe } from "@/components/WhoWeServe";
 import { WhyGLA } from "@/components/WhyGLA";
+import { OrganizationRibbon } from "@/components/OrganizationRibbon";
 import { ServicesPreview } from "@/components/ServicesPreview";
+import { BuiltForService } from "@/components/BuiltForService";
+import { Testimonials } from "@/components/Testimonials";
 import { ResourcesPreview } from "@/components/ResourcesPreview";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { Credibility } from "@/components/Credibility";
@@ -29,7 +32,10 @@ export default async function Home() {
       <HowItWorks />
       <WhoWeServe />
       <WhyGLA />
+      <OrganizationRibbon />
       <ServicesPreview />
+      <BuiltForService />
+      <Testimonials />
       <ResourcesPreview posts={posts} />
       <NewsletterSignup />
       <Credibility />

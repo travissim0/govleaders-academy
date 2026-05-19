@@ -35,11 +35,11 @@ export function NewsletterSignup({ variant = "section" }: { variant?: "section" 
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Your email"
-          className="flex-1 px-3 py-2 rounded-lg bg-white/10 border border-white/20 text-white text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gold"
+          className="flex-1 px-3 py-2 rounded-[6px] bg-white/10 border border-white/20 text-white text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gold"
         />
         <button
           type="submit"
-          className="px-4 py-2 bg-gold text-navy-dark text-sm font-semibold rounded-lg hover:bg-gold/90 transition-colors"
+          className="px-4 py-2 bg-gold text-navy-dark text-sm font-semibold rounded-[6px] hover:bg-gold/90 transition-colors"
         >
           Subscribe
         </button>
@@ -49,15 +49,15 @@ export function NewsletterSignup({ variant = "section" }: { variant?: "section" 
   }
 
   return (
-    <section className="bg-navy py-16 sm:py-20">
+    <section id="newsletter" className="bg-navy py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <Mail className="mx-auto text-gold mb-4" size={40} />
-        <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-4">
-          Get the GLA Brief
+        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          Subscribe to The GLA Brief
         </h2>
         <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
-          Subscribe for the latest courses, resources, and insights for public-sector professionals.
-          Delivered to your inbox.
+          Subscribe to The GLA Brief for practical updates, public-sector training insights,
+          course announcements, and leadership resources from GovLeaders Academy.
         </p>
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
           <input
@@ -66,11 +66,11 @@ export function NewsletterSignup({ variant = "section" }: { variant?: "section" 
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
-            className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gold"
+            className="flex-1 px-4 py-3 rounded-[6px] bg-white/10 border border-white/20 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gold"
           />
           <button
             type="submit"
-            className="px-6 py-3 bg-gold text-navy-dark font-semibold rounded-lg hover:bg-gold/90 transition-colors"
+            className="px-7 py-3 bg-gold text-navy-dark font-semibold rounded-[6px] hover:bg-gold/90 transition-colors"
           >
             Subscribe
           </button>

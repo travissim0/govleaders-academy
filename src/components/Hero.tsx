@@ -11,33 +11,34 @@ export function Hero() {
               <GraduationCap size={16} />
               Professional Development for Public Servants
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-navy leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy leading-tight mb-6">
               Online Training for Public-Sector Leaders
             </h1>
             <p className="text-lg text-slate mb-8 max-w-xl">
               GovLeaders Academy provides structured online courses, professional development
-              resources, and specialized training solutions for local government, special
-              districts, public safety professionals, board members, and public-sector leaders.
+              resources, and specialized training solutions for local governments, special
+              districts, public safety professionals, elected and appointed officials, board
+              members, consultants, and the employees who support public-sector operations.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/courses"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-navy text-white font-semibold rounded-lg hover:bg-navy-light transition-colors"
+                className="inline-flex items-center gap-2 px-9 py-4 bg-navy text-white text-[17px] font-semibold rounded-[6px] hover:bg-navy-dark transition-colors"
               >
                 <BookOpen size={18} />
                 Browse Courses
               </Link>
               <Link
-                href="/courses#tracks"
-                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-navy text-navy font-semibold rounded-lg hover:bg-navy hover:text-white transition-colors"
+                href="/courses#series"
+                className="inline-flex items-center gap-2 px-9 py-4 border border-navy text-navy text-[17px] font-semibold rounded-[6px] hover:bg-gray-light transition-colors"
               >
-                View Training Tracks
+                View Course Series
               </Link>
               <a
                 href="https://learn.govleadersacademy.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-navy-dark font-semibold rounded-lg hover:bg-gold/90 transition-colors"
+                className="inline-flex items-center gap-2 px-9 py-4 bg-white border border-navy text-navy text-[17px] font-semibold rounded-[6px] hover:bg-gray-light transition-colors"
               >
                 <ExternalLink size={18} />
                 Enter Learning Portal
@@ -47,10 +48,10 @@ export function Hero() {
 
           {/* Learning Portal Preview Mockup */}
           <div className="hidden lg:block">
-            <div className="relative bg-gray-light rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+            <div className="relative bg-gray-light rounded-[6px] shadow-xl border border-gray-200 overflow-hidden">
               {/* Top bar */}
               <div className="bg-navy px-6 py-3 flex items-center justify-between">
-                <span className="text-white font-heading text-sm font-semibold">GovLeaders Academy</span>
+                <span className="text-white text-sm font-semibold">GovLeaders Academy</span>
                 <div className="flex gap-1.5">
                   <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
                   <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
@@ -78,7 +79,7 @@ export function Hero() {
                     { title: "Leadership Dev", hours: "12 hrs", icon: Award },
                     { title: "Ethics Training", hours: "6 hrs", icon: GraduationCap },
                   ].map((card) => (
-                    <div key={card.title} className="bg-white rounded-lg p-3 border border-gray-100 shadow-sm">
+                    <div key={card.title} className="bg-white rounded-[6px] p-3 border border-gray-100 shadow-sm">
                       <div className="flex items-center gap-2 mb-2">
                         <div className="w-7 h-7 bg-navy rounded flex items-center justify-center">
                           <card.icon size={14} className="text-white" />
@@ -96,7 +97,7 @@ export function Hero() {
                 </div>
 
                 {/* Progress bar */}
-                <div className="bg-white rounded-lg p-3 border border-gray-100">
+                <div className="bg-white rounded-[6px] p-3 border border-gray-100">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs font-medium text-navy">Training Progress</span>
                     <span className="text-xs text-gold font-semibold">Certificate Ready</span>

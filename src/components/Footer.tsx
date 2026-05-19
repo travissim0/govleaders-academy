@@ -3,18 +3,17 @@ import Image from "next/image";
 import { NewsletterSignup } from "./NewsletterSignup";
 
 const footerLinks = {
-  Platform: [
-    { href: "/courses", label: "Courses" },
-    { href: "https://learn.govleadersacademy.com", label: "Learning Portal", external: true },
-    { href: "/resources", label: "Resources" },
+  Company: [
+    { href: "/about", label: "About Us" },
+    { href: "/careers", label: "Careers" },
+    { href: "/contact", label: "Contact" },
+    { href: "/insights", label: "Insights and Guides" },
   ],
   Services: [
-    { href: "/services#custom-training", label: "Custom Training" },
-    { href: "/services#promo-exams", label: "Promotional Exams" },
-    { href: "/services#college-advising", label: "College Advising" },
-  ],
-  Company: [
-    { href: "/contact", label: "Contact Us" },
+    { href: "/courses", label: "Course Catalog" },
+    { href: "/services/custom-training", label: "Custom Training" },
+    { href: "/services/promotional-exams", label: "Promotional Exams" },
+    { href: "/services/college-advising", label: "College Advising" },
   ],
 };
 
@@ -34,42 +33,55 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm text-gray-300 mb-6 max-w-sm">
-              Professional online training designed for public-sector leaders.
-              Building stronger communities through better-prepared leaders.
+              Practical online training, resources, and development solutions for
+              public-sector leaders, board members, and the professionals who support them.
             </p>
-            <NewsletterSignup variant="footer" />
+            <p className="text-xs text-gray-400 italic mb-4">Move Forward. Lead Better.</p>
           </div>
 
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="font-heading font-semibold text-sm uppercase tracking-wider text-gold mb-4">
+              <h3 className="font-semibold text-sm uppercase tracking-wider text-gold mb-4">
                 {category}
               </h3>
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link.href}>
-                    {"external" in link && link.external ? (
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-gray-300 hover:text-white transition-colors"
-                      >
-                        {link.label}
-                      </a>
-                    ) : (
-                      <Link
-                        href={link.href}
-                        className="text-sm text-gray-300 hover:text-white transition-colors"
-                      >
-                        {link.label}
-                      </Link>
-                    )}
+                    <Link
+                      href={link.href}
+                      className="text-sm text-gray-300 hover:text-gold transition-colors"
+                    >
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
+
+          <div>
+            <h3 className="font-semibold text-sm uppercase tracking-wider text-gold mb-4">
+              Connect
+            </h3>
+            <ul className="space-y-2 mb-6">
+              <li>
+                <Link href="#newsletter" className="text-sm text-gray-300 hover:text-gold transition-colors">
+                  The GLA Brief
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="https://learn.govleadersacademy.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-gray-300 hover:text-gold transition-colors"
+                >
+                  Learning Portal
+                </a>
+              </li>
+            </ul>
+            <NewsletterSignup variant="footer" />
+          </div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -77,11 +89,14 @@ export function Footer() {
             &copy; {new Date().getFullYear()} GovLeaders Academy. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link href="/privacy" className="text-sm text-gray-400 hover:text-white transition-colors">
+            <Link href="/privacy" className="text-sm text-gray-400 hover:text-gold transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-sm text-gray-400 hover:text-white transition-colors">
-              Terms of Service
+            <Link href="/terms" className="text-sm text-gray-400 hover:text-gold transition-colors">
+              Terms of Use
+            </Link>
+            <Link href="/accessibility" className="text-sm text-gray-400 hover:text-gold transition-colors">
+              Accessibility
             </Link>
           </div>
         </div>

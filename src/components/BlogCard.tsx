@@ -41,7 +41,7 @@ const placeholderPosts: Post[] = [
 function BlogCardItem({ post }: { post: Post }) {
   return (
     <Link
-      href={`/resources/${post.slug.current}`}
+      href={`/insights/${post.slug.current}`}
       className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg hover:border-gold/30 transition-all"
     >
       <div className="h-40 bg-gradient-to-br from-navy-light to-navy flex items-center justify-center">

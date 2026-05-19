@@ -5,20 +5,20 @@ const services = [
   {
     icon: Wrench,
     title: "Custom Training",
-    description: "Tailored training programs designed for your organization's specific needs and goals.",
-    href: "/services#custom-training",
+    description: "Tailored online training, board orientation, leadership development, and organization-specific coursework.",
+    href: "/services/custom-training",
   },
   {
     icon: FileCheck,
     title: "Promotional Exam Services",
-    description: "Comprehensive exam development and administration for public-sector promotions.",
-    href: "/services#promo-exams",
+    description: "Online promotional exam support, assessment tools, and leadership development for public safety organizations.",
+    href: "/services/promotional-exams",
   },
   {
     icon: GraduationCap,
     title: "College Pathway Advising",
-    description: "Guidance for public-sector professionals pursuing higher education credentials.",
-    href: "/services#college-advising",
+    description: "Practical degree-planning support for public-sector professionals seeking affordable, accredited education pathways.",
+    href: "/services/college-advising",
   },
 ];
 
@@ -28,7 +28,7 @@ export function ServicesPreview() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
           <p className="text-sm font-semibold text-slate uppercase tracking-wider mb-2">Additional Services</p>
-          <h2 className="text-2xl sm:text-3xl font-heading font-bold text-navy mb-3">
+          <h2 className="text-2xl sm:text-3xl font-bold text-navy mb-3">
             Beyond the Course Catalog
           </h2>
           <p className="text-slate max-w-xl mx-auto text-sm">
@@ -41,11 +41,11 @@ export function ServicesPreview() {
             <Link
               key={service.title}
               href={service.href}
-              className="group flex items-start gap-3 p-4 rounded-lg border border-gray-200 hover:border-gold/30 hover:bg-gray-light/50 transition-all"
+              className="group flex items-start gap-3 p-4 rounded-[6px] border border-gray-200 hover:border-gold/30 hover:bg-gray-light/50 transition-all"
             >
               <service.icon size={20} className="text-slate mt-0.5 shrink-0 group-hover:text-navy transition-colors" />
               <div>
-                <h3 className="font-heading font-semibold text-sm text-navy mb-1 group-hover:text-navy-light transition-colors">
+                <h3 className="font-semibold text-sm text-navy mb-1 group-hover:text-navy-light transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-xs text-slate leading-relaxed">{service.description}</p>
