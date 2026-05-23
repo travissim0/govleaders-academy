@@ -92,7 +92,7 @@ function CourseCardItem({ course }: { course: Course }) {
       href={course.learnworldsUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="group bg-white rounded-[6px] border border-gray-200 overflow-hidden hover:shadow-xl transition-all hover:border-gold/40 hover:-translate-y-1"
+      className="group bg-white rounded-[6px] border border-gray-200 overflow-hidden hover:shadow-xl transition-all hover:border-gold/40 hover:-translate-y-1 flex flex-col"
     >
       <div className="h-36 bg-gradient-to-br from-navy to-navy-light relative flex items-end p-4">
         <div className="absolute top-3 right-3 flex gap-1.5">
@@ -104,7 +104,7 @@ function CourseCardItem({ course }: { course: Course }) {
           {course.title}
         </h3>
       </div>
-      <div className="p-4">
+      <div className="p-4 flex flex-col flex-1">
         <div className="flex flex-wrap gap-1 mb-2">
           <span className="inline-block text-[11px] font-medium bg-gold/10 text-gold px-2 py-0.5 rounded">
             {course.category}
@@ -115,10 +115,10 @@ function CourseCardItem({ course }: { course: Course }) {
             </span>
           ))}
         </div>
-        <p className="text-sm text-slate mb-3 line-clamp-2 leading-relaxed">
+        <p className="text-sm text-slate mb-3 line-clamp-2 leading-relaxed flex-1">
           {course.shortDescription}
         </p>
-        <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+        <div className="flex items-center justify-between pt-3 border-t border-gray-100 mt-auto">
           <div className="flex items-center gap-3 text-xs text-slate">
             <span className="flex items-center gap-1">
               <Clock size={12} />

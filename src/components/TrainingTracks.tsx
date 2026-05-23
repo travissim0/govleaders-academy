@@ -8,6 +8,7 @@ const series = [
     tag: "Flagship Series",
     description: "Texas government, special purpose districts, public finance, and board decision-making.",
     courses: 4,
+    contactHours: 30,
     price: "$399",
   },
   {
@@ -16,6 +17,7 @@ const series = [
     tag: "Course Series",
     description: "Roles, responsibilities, consultants, ethics, transparency, and meeting documentation.",
     courses: 4,
+    contactHours: 22,
     price: "$249",
   },
   {
@@ -24,6 +26,7 @@ const series = [
     tag: "Course Series",
     description: "Open meetings, public records, rate-setting, risk, liability, and procurement.",
     courses: 4,
+    contactHours: 24,
     price: "$259",
   },
   {
@@ -32,6 +35,7 @@ const series = [
     tag: "Course Series",
     description: "MUD operations, water systems, communication, stakeholder engagement, and practical leadership.",
     courses: 4,
+    contactHours: 22,
     price: "$279",
   },
   {
@@ -40,6 +44,7 @@ const series = [
     tag: "Individual",
     description: "Focused topics including elections, parks planning, contract policing, and consultant guidance.",
     courses: 5,
+    contactHours: 22,
     price: "$69 to $149",
   },
 ];
@@ -83,7 +88,7 @@ export function TrainingTracks() {
               </h3>
               <p className="text-xs text-slate leading-relaxed mb-3 flex-1">{item.description}</p>
               <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                <span className="text-xs text-slate">{item.courses} courses &middot; {item.price}</span>
+                <span className="text-xs text-slate">{item.courses} courses &middot; {item.contactHours} hrs &middot; {item.price}</span>
                 <ArrowRight size={14} className="text-slate group-hover:text-gold transition-colors" />
               </div>
             </Link>

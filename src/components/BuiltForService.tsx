@@ -25,19 +25,19 @@ export function BuiltForService() {
             href="/services/custom-training"
             className="inline-flex items-center px-7 py-3 border border-navy text-navy text-[16px] font-semibold rounded-[6px] hover:bg-gray-light transition-colors"
           >
-            Request Custom Training
+            Request Custom Training Information
           </Link>
           <Link
             href="/services/promotional-exams"
             className="inline-flex items-center px-7 py-3 border border-navy text-navy text-[16px] font-semibold rounded-[6px] hover:bg-gray-light transition-colors"
           >
-            Request Exam Services
+            Request Promotional Exam Information
           </Link>
           <Link
             href="/services/college-advising"
             className="inline-flex items-center px-7 py-3 border border-navy text-navy text-[16px] font-semibold rounded-[6px] hover:bg-gray-light transition-colors"
           >
-            Ask About College Advising
+            Request College Advising Information
           </Link>
         </div>
       </div>
