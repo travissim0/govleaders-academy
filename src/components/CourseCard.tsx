@@ -3,6 +3,33 @@ import { Clock, BarChart3, ArrowRight, ExternalLink, Monitor } from "lucide-reac
 import type { Course } from "@/types";
 
 const courseTags: Record<string, string[]> = {
+  // Flagship Series
+  "course-01": ["Texas-Specific", "Foundational", "Board Governance"],
+  "course-02": ["Texas-Specific", "Foundational", "Special Districts"],
+  "course-03": ["Texas-Specific", "Foundational", "Public Finance"],
+  "course-04": ["Broadly Applicable", "Board Governance"],
+  // New Board Member Series
+  "course-05": ["Broadly Applicable", "Foundational", "Board Governance"],
+  "course-06": ["Broadly Applicable", "Foundational", "Consultants and Vendors"],
+  "course-07": ["Broadly Applicable", "Foundational", "Ethics"],
+  "course-08": ["Broadly Applicable", "Foundational", "Compliance"],
+  // Water District Governance & Legal
+  "course-09": ["Texas-Specific", "Compliance", "Board Governance"],
+  "course-10": ["Texas-Specific", "Water Districts", "Public Finance"],
+  "course-11": ["Broadly Applicable", "Board Governance", "Compliance"],
+  "course-12": ["Texas-Specific", "Water Districts", "Operations"],
+  // Water District Operations & Leadership
+  "course-13": ["Texas-Specific", "Water Districts", "Operations"],
+  "course-14": ["Texas-Specific", "Water Districts", "Operations"],
+  "course-15": ["Broadly Applicable", "Leadership", "Communication"],
+  "course-16": ["Broadly Applicable", "Leadership"],
+  // Standalone
+  "course-17": ["Texas-Specific", "Water Districts", "Foundational"],
+  "course-18": ["Texas-Specific", "Water Districts", "Operations"],
+  "course-19": ["Texas-Specific", "Public Safety", "Water Districts"],
+  "course-20": ["Broadly Applicable", "Leadership", "Board Governance"],
+  "course-21": ["Broadly Applicable", "Consultants and Vendors"],
+  // Fallback for old placeholder IDs
   "1": ["Texas-Specific", "Foundational", "Board Governance"],
   "2": ["Texas-Specific", "Foundational", "Special Districts"],
   "3": ["Broadly Applicable", "Foundational", "Board Governance"],
