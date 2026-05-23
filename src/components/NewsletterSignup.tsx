@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Mail } from "lucide-react";
+import { TurnstileWidget } from "./TurnstileWidget";
 
 export function NewsletterSignup({ variant = "section" }: { variant?: "section" | "footer" }) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const turnstileToken = useRef("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -13,7 +15,7 @@ export function NewsletterSignup({ variant = "section" }: { variant?: "section" 
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, turnstileToken: turnstileToken.current }),
       });
       if (res.ok) {
         setStatus("success");
@@ -28,7 +30,8 @@ export function NewsletterSignup({ variant = "section" }: { variant?: "section" 
 
   if (variant === "footer") {
     return (
-      <form onSubmit={handleSubmit} className="flex gap-2">
+      <form onSubmit={handleSubmit} className="flex gap-2 flex-wrap">
+        <TurnstileWidget onSuccess={(token) => { turnstileToken.current = token; }} />
         <input
           type="email"
           required
@@ -59,6 +62,7 @@ export function NewsletterSignup({ variant = "section" }: { variant?: "section" 
           Subscribe to The GLA Brief for practical updates, public-sector training insights,
           course announcements, and leadership resources from GovLeaders Academy.
         </p>
+        <TurnstileWidget onSuccess={(token) => { turnstileToken.current = token; }} />
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
           <input
             type="email"

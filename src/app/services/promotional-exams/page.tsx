@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import {
   CheckCircle,
@@ -8,6 +8,7 @@ import {
   AlertCircle,
   FileCheck,
 } from "lucide-react";
+import { TurnstileWidget } from "@/components/TurnstileWidget";
 
 const orgTypeOptions = [
   "Law enforcement agency",
@@ -82,6 +83,7 @@ export default function PromotionalExamsPage() {
   const [status, setStatus] = useState<
     "idle" | "submitting" | "success" | "error"
   >("idle");
+  const turnstileToken = useRef("");
 
   function handleChange(
     e: React.ChangeEvent<
@@ -101,6 +103,7 @@ export default function PromotionalExamsPage() {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
+          turnstileToken: turnstileToken.current,
           inquiryType: "Promotional Exams",
           message: `Phone: ${formData.phone || "Not provided"}
 Organization: ${formData.organizationName || "Not provided"}
@@ -589,6 +592,8 @@ Additional Notes: ${formData.additionalNotes || "None"}`,
                   Something went wrong. Please try again.
                 </div>
               )}
+
+              <TurnstileWidget onSuccess={(token) => { turnstileToken.current = token; }} />
 
               <button
                 type="submit"

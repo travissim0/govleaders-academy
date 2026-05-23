@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import {
   CheckCircle,
@@ -8,6 +8,7 @@ import {
   AlertCircle,
   GraduationCap,
 } from "lucide-react";
+import { TurnstileWidget } from "@/components/TurnstileWidget";
 
 const educationLevelOptions = [
   "No college credit",
@@ -133,6 +134,7 @@ export default function CollegeAdvisingPage() {
   const [status, setStatus] = useState<
     "idle" | "submitting" | "success" | "error"
   >("idle");
+  const turnstileToken = useRef("");
 
   function handleChange(
     e: React.ChangeEvent<
@@ -165,6 +167,7 @@ export default function CollegeAdvisingPage() {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
+          turnstileToken: turnstileToken.current,
           inquiryType: "College Advising",
           message: `Phone: ${formData.phone || "Not provided"}
 Current Education Level: ${formData.currentEducationLevel || "Not specified"}
@@ -659,6 +662,8 @@ Additional Notes: ${formData.additionalNotes || "None"}`,
                   Something went wrong. Please try again.
                 </div>
               )}
+
+              <TurnstileWidget onSuccess={(token) => { turnstileToken.current = token; }} />
 
               <button
                 type="submit"

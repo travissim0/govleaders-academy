@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import {
   CheckCircle,
@@ -8,6 +8,7 @@ import {
   AlertCircle,
   Wrench,
 } from "lucide-react";
+import { TurnstileWidget } from "@/components/TurnstileWidget";
 
 const targetAudienceOptions = [
   "Board members",
@@ -76,6 +77,7 @@ export default function CustomTrainingPage() {
   const [status, setStatus] = useState<
     "idle" | "submitting" | "success" | "error"
   >("idle");
+  const turnstileToken = useRef("");
 
   function handleChange(
     e: React.ChangeEvent<
@@ -108,6 +110,7 @@ export default function CustomTrainingPage() {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
+          turnstileToken: turnstileToken.current,
           inquiryType: "Custom Training",
           message: `Phone: ${formData.phone || "Not provided"}
 Organization: ${formData.organizationName || "Not provided"}
@@ -621,6 +624,8 @@ Additional Notes: ${formData.additionalNotes || "None"}`,
                   Something went wrong. Please try again.
                 </div>
               )}
+
+              <TurnstileWidget onSuccess={(token) => { turnstileToken.current = token; }} />
 
               <button
                 type="submit"

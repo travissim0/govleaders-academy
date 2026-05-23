@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
+import { TurnstileWidget } from "./TurnstileWidget";
 
 const inquiryTypes = [
   "Course Question",
@@ -22,6 +23,7 @@ export function ContactForm() {
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const turnstileToken = useRef("");
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -34,7 +36,7 @@ export function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, turnstileToken: turnstileToken.current }),
       });
       if (res.ok) {
         setStatus("success");
@@ -167,6 +169,8 @@ export function ContactForm() {
           Something went wrong. Please try again.
         </div>
       )}
+
+      <TurnstileWidget onSuccess={(token) => { turnstileToken.current = token; }} />
 
       <button
         type="submit"

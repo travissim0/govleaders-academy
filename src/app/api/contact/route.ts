@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { verifyTurnstile } from "@/lib/turnstile";
 
 const NOTIFY_EMAIL = process.env.CONTACT_NOTIFY_EMAIL || "delivered@resend.dev";
 const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || "GovLeaders Academy <onboarding@resend.dev>";
@@ -7,11 +8,19 @@ const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || "GovLeaders Academy <onboar
 export async function POST(request: NextRequest) {
   const body = await request.json();
 
-  const { name, email, organization, role, inquiryType, message } = body;
+  const { name, email, organization, role, inquiryType, message, turnstileToken } = body;
   if (!name || !email || !inquiryType || !message) {
     return NextResponse.json(
       { error: "Name, email, inquiry type, and message are required." },
       { status: 400 }
+    );
+  }
+
+  const verified = await verifyTurnstile(turnstileToken || "");
+  if (!verified) {
+    return NextResponse.json(
+      { error: "Spam verification failed. Please try again." },
+      { status: 403 }
     );
   }
 
