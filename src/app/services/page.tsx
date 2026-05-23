@@ -4,7 +4,7 @@ import { BookOpen, Wrench, FileCheck, GraduationCap, ArrowRight } from "lucide-r
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Course catalog, custom training, promotional exam services, and college pathway advising for public-sector organizations and professionals.",
+  description: "Course catalog, custom training, promotional exam services, and college advising for public-sector organizations and professionals.",
 };
 
 const services = [
@@ -31,8 +31,8 @@ const services = [
   },
   {
     icon: GraduationCap,
-    title: "College Pathway Advising",
-    description: "Practical degree-planning support for adults who want legitimate, affordable, and accredited education pathways aligned with public-sector careers.",
+    title: "College Advising",
+    description: "Degree pathway planning for public-sector professionals seeking legitimate, accredited, affordable, and practical education options.",
     href: "/services/college-advising",
     cta: "Request College Advising Information",
   },

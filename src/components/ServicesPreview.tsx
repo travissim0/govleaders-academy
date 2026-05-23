@@ -16,8 +16,8 @@ const services = [
   },
   {
     icon: GraduationCap,
-    title: "College Pathway Advising",
-    description: "Practical degree-planning support for public-sector professionals seeking affordable, accredited education pathways.",
+    title: "College Advising",
+    description: "Degree pathway planning for public-sector professionals seeking legitimate, accredited, affordable, and practical education options.",
     href: "/services/college-advising",
   },
 ];

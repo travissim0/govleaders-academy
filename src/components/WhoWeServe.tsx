@@ -1,4 +1,4 @@
-import { Building, Droplets, Flame, Landmark, Users, GraduationCap } from "lucide-react";
+import { Building, Droplets, Flame, Landmark, Users, GraduationCap, Shield } from "lucide-react";
 
 const audiences = [
   { icon: Building, title: "Special District Board Members", description: "Elected and appointed officials governing special-purpose districts." },
@@ -6,6 +6,7 @@ const audiences = [
   { icon: Flame, title: "Emergency Services Commissioners", description: "ESD commissioners and fire district leadership." },
   { icon: Landmark, title: "City and County Officials", description: "Municipal and county elected officials and senior staff." },
   { icon: Users, title: "Consultants and District Professionals", description: "Attorneys, engineers, operators, financial advisors, and other professionals supporting public entities." },
+  { icon: Shield, title: "Public Safety Professionals", description: "Law enforcement, fire, EMS, emergency management, and public safety personnel preparing for leadership, promotion, professional development, or organizational training." },
   { icon: GraduationCap, title: "Aspiring Public Leaders", description: "Professionals preparing to run for office, seek appointment, or step into public-sector leadership roles." },
 ];
 

@@ -14,6 +14,7 @@ const footerLinks = {
     { href: "/services/custom-training", label: "Custom Training" },
     { href: "/services/promotional-exams", label: "Promotional Exams" },
     { href: "/services/college-advising", label: "College Advising" },
+    { href: "/sponsorships", label: "Sponsorships" },
   ],
 };
 

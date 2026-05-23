@@ -1,17 +1,17 @@
 "use client";
 
 const placeholderOrgs = [
-  "Harris County MUD #1000",
-  "Main Street MUD",
-  "Utopia County WCID #1",
-  "John Doe PLLC",
-  "Engineering Firm LLC",
-  "Good Times ISD",
+  "Lone Star District Counsel PLLC",
+  "Regional Engineering Partners LLC",
+  "Gulf Coast Public Finance LLC",
+  "Civic Water Advisors LLC",
   "North County ESD #10",
   "Central Valley Utility District",
-  "Lone Star Public Safety Association",
-  "Regional Government Advisors LLC",
+  "Main Street MUD",
+  "Utopia County WCID #1",
   "Oak Ridge Water Authority",
+  "Regional Government Advisors LLC",
+  "Lone Star Public Safety Association",
   "Civic Partners Consulting Group",
 ];
 

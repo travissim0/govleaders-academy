@@ -1,10 +1,11 @@
-import { Target, Clock, Shield, Award } from "lucide-react";
+import { Target, Clock, Shield, Award, UserCheck } from "lucide-react";
 
 const benefits = [
   { icon: Target, title: "Practical, Not Theoretical", description: "Every course is built around real-world application: governance, operations, and decision-making that public-sector professionals face daily." },
   { icon: Clock, title: "Self-Paced, 100% Online", description: "Complete training on your schedule with 6- or 12-month access. No travel, no scheduling conflicts." },
   { icon: Shield, title: "Built by Practitioners", description: "Curriculum developed by professionals with direct experience in Texas special districts, local government, and public-sector leadership." },
   { icon: Award, title: "Certificates of Completion", description: "Earn verifiable certificates that demonstrate your professional development and commitment to better governance." },
+  { icon: UserCheck, title: "Designed for Working Adults", description: "Training is structured for busy professionals, board members, employees, and leaders who need practical information without unnecessary complexity." },
 ];
 
 export function WhyGLA() {

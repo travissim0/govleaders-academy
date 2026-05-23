@@ -14,11 +14,17 @@ export function Hero() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy leading-tight mb-6">
               Online Training for Public-Sector Leaders
             </h1>
-            <p className="text-lg text-slate mb-8 max-w-xl">
+            <p className="text-lg text-slate mb-4 max-w-xl">
               GovLeaders Academy provides structured online courses, professional development
               resources, and specialized training solutions for local governments, special
               districts, public safety professionals, elected and appointed officials, board
               members, consultants, and the employees who support public-sector operations.
+            </p>
+            <p className="text-sm text-slate/80 mb-8 max-w-xl">
+              Built for the people who govern, manage, support, and advise
+              public-sector organizations, with an initial course focus on
+              special districts, MUDs, WCIDs, water districts, board members,
+              district staff, and the professionals who support them.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link

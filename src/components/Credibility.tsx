@@ -18,8 +18,8 @@ export function Credibility() {
           </h2>
           <p className="text-lg text-slate mb-3">
             GovLeaders Academy exists to help public-sector leaders and those who support
-            them move from uncertainty to competence, from fragmented knowledge to structured
-            understanding, and from reactive decision-making to informed leadership.
+            them build competence, develop structured knowledge, and make more informed
+            decisions in their roles.
           </p>
           <p className="text-slate mb-8">
             Our mission is to advance the public sector by developing knowledgeable, capable

@@ -2,6 +2,15 @@ import Link from "next/link";
 import { Clock, BarChart3, ArrowRight, ExternalLink, Monitor } from "lucide-react";
 import type { Course } from "@/types";
 
+const courseTags: Record<string, string[]> = {
+  "1": ["Texas-Specific", "Foundational", "Board Governance"],
+  "2": ["Texas-Specific", "Foundational", "Special Districts"],
+  "3": ["Broadly Applicable", "Foundational", "Board Governance"],
+  "4": ["Texas-Specific", "Compliance", "Board Governance"],
+  "5": ["Texas-Specific", "Water Districts", "Operations"],
+  "6": ["Texas-Specific", "Public Safety", "Water Districts"],
+};
+
 const placeholderCourses: Course[] = [
   {
     _id: "1",
@@ -96,9 +105,16 @@ function CourseCardItem({ course }: { course: Course }) {
         </h3>
       </div>
       <div className="p-4">
-        <span className="inline-block text-[11px] font-medium bg-gold/10 text-gold px-2 py-0.5 rounded mb-2">
-          {course.category}
-        </span>
+        <div className="flex flex-wrap gap-1 mb-2">
+          <span className="inline-block text-[11px] font-medium bg-gold/10 text-gold px-2 py-0.5 rounded">
+            {course.category}
+          </span>
+          {(courseTags[course._id] || []).map((tag) => (
+            <span key={tag} className="inline-block text-[10px] font-medium bg-navy/5 text-navy px-2 py-0.5 rounded">
+              {tag}
+            </span>
+          ))}
+        </div>
         <p className="text-sm text-slate mb-3 line-clamp-2 leading-relaxed">
           {course.shortDescription}
         </p>

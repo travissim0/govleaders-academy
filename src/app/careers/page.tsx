@@ -81,10 +81,10 @@ export default function CareersPage() {
               competence, and professionalism. Our work is focused on real
               public-sector needs, including leadership development, governance,
               supervision, public safety, special districts, local government,
-              and adult education. We are not currently hiring for all roles, but
-              we welcome future interest from qualified instructors, subject
-              matter experts, instructional designers, advisors, and
-              professionals who understand public service and adult learning.
+              and adult education. We are not currently hiring, but we welcome
+              future interest from qualified instructors, subject matter
+              experts, instructional designers, advisors, and professionals
+              who understand public service and adult learning.
             </p>
           </div>
         </div>
@@ -160,13 +160,13 @@ export default function CareersPage() {
             {[
               {
                 icon: <Users size={24} className="text-gold" />,
-                title: "Mission-Driven Work",
-                desc: "Everything we build serves the people who serve the public. Your contributions have real impact on communities.",
+                title: "Work That Supports Public Service",
+                desc: "Contribute to training, advising, and course development that helps public-sector professionals, board members, and organizations serve their communities with greater confidence and competence.",
               },
               {
                 icon: <Briefcase size={24} className="text-gold" />,
-                title: "Professional Growth",
-                desc: "Collaborate with experienced public-sector professionals and expand your expertise in adult education and training.",
+                title: "Practical Professional Contribution",
+                desc: "Collaborate on work that connects directly to real public-sector responsibilities, including governance, leadership development, supervision, public safety, special districts, and adult learning.",
               },
               {
                 icon: <MapPin size={24} className="text-gold" />,

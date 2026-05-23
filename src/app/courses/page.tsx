@@ -45,6 +45,66 @@ export default async function CoursesPage() {
       <TrainingTracks />
       <FeaturedCourses courses={courses} />
 
+      {/* Browse by Topic */}
+      <section className="bg-white py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-navy mb-8 text-center">
+            Browse by Topic
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {[
+              "Texas Government",
+              "Special Districts",
+              "MUDs and Water Districts",
+              "Board Governance",
+              "Ethics and Compliance",
+              "Public Finance",
+              "Public Safety",
+              "Leadership and Supervision",
+              "District Operations",
+              "Consultants and Vendors",
+            ].map((topic) => (
+              <div
+                key={topic}
+                className="bg-gray-light rounded-[6px] p-4 text-center border border-gray-200 hover:border-gold/30 transition-colors"
+              >
+                <p className="text-sm font-semibold text-navy">{topic}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Browse by Audience */}
+      <section className="bg-gray-light py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-navy mb-8 text-center">
+            Browse by Audience
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {[
+              "New Board Members",
+              "Elected and Appointed Officials",
+              "Water District Leaders",
+              "MUD and WCID Board Members",
+              "District Staff",
+              "Consultants and Vendors",
+              "Public Safety Professionals",
+              "City and County Officials",
+              "Aspiring Public Leaders",
+              "Full Boards and Organizations",
+            ].map((audience) => (
+              <div
+                key={audience}
+                className="bg-white rounded-[6px] p-4 text-center border border-gray-200 hover:border-gold/30 transition-colors"
+              >
+                <p className="text-sm font-semibold text-navy">{audience}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-white py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gray-light rounded-[6px] border border-gray-200 p-6 sm:p-8 text-sm text-slate">

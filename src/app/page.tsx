@@ -6,6 +6,7 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { WhoWeServe } from "@/components/WhoWeServe";
 import { WhyGLA } from "@/components/WhyGLA";
 import { OrganizationRibbon } from "@/components/OrganizationRibbon";
+import { IndividualsAndOrgs } from "@/components/IndividualsAndOrgs";
 import { ServicesPreview } from "@/components/ServicesPreview";
 import { BuiltForService } from "@/components/BuiltForService";
 import { Testimonials } from "@/components/Testimonials";
@@ -29,6 +30,7 @@ export default async function Home() {
       <StatsStrip />
       <TrainingTracks />
       <FeaturedCourses courses={courses} />
+      <IndividualsAndOrgs />
       <HowItWorks />
       <WhoWeServe />
       <WhyGLA />

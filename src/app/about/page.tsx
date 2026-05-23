@@ -172,10 +172,10 @@ export default function AboutPage() {
               <div className="space-y-2 mb-4">
                 {leadersValues.map((v) => (
                   <div key={v.letter + v.word} className="flex items-center gap-3">
-                    <span className="w-8 h-8 flex items-center justify-center bg-navy text-white font-bold rounded-[6px] text-sm shrink-0">
+                    <span className="w-8 h-8 flex items-center justify-center bg-gold text-navy-dark font-bold rounded-[6px] text-sm shrink-0">
                       {v.letter}
                     </span>
-                    <span className="text-navy font-medium text-sm">
+                    <span className="text-navy font-semibold text-sm">
                       {v.word}
                     </span>
                   </div>
@@ -217,8 +217,9 @@ export default function AboutPage() {
             Move Forward. Lead Better.
           </h2>
           <p className="text-lg text-gray-300 max-w-xl mx-auto">
-            GovLeaders Academy is here to support the professionals and
-            organizations that serve our communities.
+            That phrase reflects the purpose behind GovLeaders Academy: helping
+            public-sector professionals and organizations take the next
+            practical step toward stronger leadership and better service.
           </p>
         </div>
       </section>

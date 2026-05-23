@@ -51,7 +51,7 @@ const mainGoalOptions = [
 ];
 
 const supportLevelOptions = [
-  "Pathway Review",
+  "Degree Pathway Review",
   "Degree Completion Plan",
   "Guided Enrollment Support",
   "Ongoing Education Support",
@@ -94,7 +94,7 @@ const deliverables = [
 
 const serviceLevels = [
   {
-    title: "Pathway Review",
+    title: "Degree Pathway Review",
     description:
       "A single session to evaluate where you stand academically and discuss your options. Ideal if you want a quick overview before making decisions.",
   },
@@ -199,8 +199,8 @@ Additional Notes: ${formData.additionalNotes || "None"}`,
             College Advising for Public-Sector Professionals
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Practical degree-planning support for adults who want legitimate,
-            affordable, and accredited education pathways.
+            Practical degree pathway planning for adults who want legitimate,
+            affordable, and accredited education options.
           </p>
         </div>
       </section>
@@ -214,21 +214,39 @@ Additional Notes: ${formData.additionalNotes || "None"}`,
                 <GraduationCap size={28} className="text-navy" />
               </div>
               <h2 className="text-3xl font-heading font-bold text-navy mb-4">
-                Education Guidance for Working Professionals
+                College Advising for Public-Sector Professionals
               </h2>
               <p className="text-slate mb-4">
-                GovLeaders Academy helps public-sector professionals start or
-                finish college degrees. Whether you have no college credit or
-                you are close to completing a degree, our advising service is
-                designed to help you identify the most practical, affordable,
-                and legitimate path forward.
+                Do you have no college, some college, a lot of college, or a
+                degree you want to build on? GovLeaders Academy helps
+                public-sector professionals understand where they stand, what
+                options may be available, and how to move forward through
+                legitimate, accredited, and affordable education pathways.
               </p>
               <p className="text-slate mb-4">
-                We work with you to review your academic history, evaluate
-                alternative credit sources, and build a realistic plan that fits
-                your career and your schedule. GLA is not a school and does not
-                issue degrees. We help you navigate the process so you can make
-                informed decisions.
+                GLA believes education matters in public service. A strong
+                public-sector workforce should be built through a combination of
+                training, education, and experience. Formal education is not the
+                only measure of competence, but it can strengthen credibility,
+                improve decision-making, expand career options, and support more
+                effective public service.
+              </p>
+              <p className="text-slate mb-4">
+                Our College Advising service helps clients review their academic
+                background, identify remaining degree requirements and
+                educational gaps, compare legitimate and accredited degree
+                pathway options, and prepare for official advising, admissions,
+                and registration steps. A major goal of GLA college advising is
+                to help clients avoid unnecessary student debt by identifying
+                practical, accredited, transfer-friendly, and cost-conscious
+                pathways whenever possible.
+              </p>
+              <p className="text-slate mb-4">
+                GLA is not a school. GLA does not issue degrees. GLA does not
+                replace official college advising. GLA helps clients prepare for
+                official college and university advising. GLA respects education
+                privacy and will not share personal or education information
+                without permission.
               </p>
               <p className="text-slate mb-4">
                 Your information is kept confidential. GLA follows FERPA
@@ -280,7 +298,7 @@ Additional Notes: ${formData.additionalNotes || "None"}`,
       <section className="bg-gray-light py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-heading font-bold text-navy mb-10 text-center">
-            Service Levels
+            College Advising Options
           </h2>
           <div className="grid sm:grid-cols-2 gap-6">
             {serviceLevels.map((level) => (

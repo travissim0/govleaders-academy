@@ -7,7 +7,7 @@ export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Insights and Guides",
-  description: "Expert articles, practical guides, and actionable insights for public-sector professionals. Stay informed on governance, compliance, and leadership.",
+  description: "Practical articles, guides, and updates for public-sector professionals. Stay informed on governance, compliance, and leadership.",
 };
 
 export default async function InsightsPage() {
@@ -22,8 +22,7 @@ export default async function InsightsPage() {
             Insights and Guides
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Expert articles, practical guides, and the latest updates
-            for public-sector professionals.
+            Practical articles, guides, and updates for public-sector professionals.
           </p>
         </div>
       </section>
