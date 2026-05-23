@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { verifyTurnstile } from "@/lib/turnstile";
+import { addBrevoContact } from "@/lib/brevo";
 
 const NOTIFY_EMAIL = process.env.CONTACT_NOTIFY_EMAIL || "delivered@resend.dev";
 const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || "GovLeaders Academy <onboarding@resend.dev>";
@@ -48,6 +49,17 @@ export async function POST(request: NextRequest) {
         </table>
       `,
     });
+
+    // Also add to Brevo as a lead (non-blocking)
+    addBrevoContact({
+      email,
+      attributes: {
+        FIRSTNAME: name.split(" ")[0],
+        LASTNAME: name.split(" ").slice(1).join(" ") || "",
+        SOURCE: `Contact Form - ${inquiryType}`,
+        ...(organization ? { COMPANY: organization } : {}),
+      },
+    }).catch((err) => console.error("Brevo contact creation failed:", err));
 
     return NextResponse.json({ success: true, message: "Message received. We'll be in touch!" });
   } catch (error) {
