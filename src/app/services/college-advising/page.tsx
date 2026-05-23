@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import {
   CheckCircle,
-  ArrowRight,
   Send,
   AlertCircle,
   GraduationCap,
@@ -71,12 +70,12 @@ const alternativeCreditOptions = [
 ];
 
 const processSteps = [
-  { number: "1", label: "Initial Inquiry" },
-  { number: "2", label: "Document Review" },
-  { number: "3", label: "Goal Alignment" },
-  { number: "4", label: "Pathway Recommendation" },
-  { number: "5", label: "Application and Advising Support" },
-  { number: "6", label: "Ongoing Support" },
+  { number: "1", label: "Initial Inquiry", description: "Client submits education goals, current status, and basic background information." },
+  { number: "2", label: "Document Review", description: "GLA reviews unofficial transcripts, prior credits, alternative credit sources, and relevant education history." },
+  { number: "3", label: "Goal Alignment", description: "GLA compares the client's education goals, career goals, timeline, and budget." },
+  { number: "4", label: "Pathway Recommendation", description: "GLA provides practical degree pathway options focused on accredited, affordable, and accessible programs." },
+  { number: "5", label: "Application and Advising Support", description: "GLA helps the client prepare for admissions, official advising, and registration." },
+  { number: "6", label: "Ongoing Support", description: "Optional follow-up support is available for clients who want continued guidance." },
 ];
 
 const deliverables = [
@@ -319,36 +318,37 @@ Additional Notes: ${formData.additionalNotes || "None"}`,
       {/* Process */}
       <section className="bg-white py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-heading font-bold text-navy mb-10 text-center">
-            How It Works
+          <p className="text-sm font-semibold text-gold uppercase tracking-wider text-center mb-2">
+            Step by Step
+          </p>
+          <h2 className="text-3xl font-heading font-bold text-navy mb-12 text-center">
+            College Advising Process
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {processSteps.map((step) => (
-              <div
-                key={step.number}
-                className="bg-gray-light rounded-[6px] p-6 border border-gray-200 flex items-start gap-4"
-              >
-                <div className="w-10 h-10 bg-navy rounded-[6px] flex items-center justify-center shrink-0">
-                  <span className="text-white font-bold text-sm">
-                    {step.number}
-                  </span>
+          <div className="max-w-4xl mx-auto">
+            {processSteps.map((step, i) => (
+              <div key={step.number} className="relative flex gap-6">
+                {/* Timeline line */}
+                <div className="flex flex-col items-center">
+                  <div className="w-12 h-12 bg-navy rounded-full flex items-center justify-center shrink-0 z-10 ring-4 ring-white">
+                    <span className="text-white font-bold text-sm">
+                      {step.number}
+                    </span>
+                  </div>
+                  {i < processSteps.length - 1 && (
+                    <div className="w-0.5 bg-navy/20 flex-1 min-h-8" />
+                  )}
                 </div>
-                <div>
-                  <h3 className="font-heading font-semibold text-navy">
+                {/* Content */}
+                <div className="pb-8">
+                  <h3 className="font-heading font-bold text-navy text-lg mb-1">
                     {step.label}
                   </h3>
+                  <p className="text-sm text-slate leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
               </div>
             ))}
-          </div>
-          <div className="mt-8 flex justify-center">
-            <div className="flex items-center gap-2 text-sm text-slate">
-              <ArrowRight size={16} className="text-gold" />
-              <span>
-                Support is available at every stage, from initial planning
-                through enrollment and beyond.
-              </span>
-            </div>
           </div>
         </div>
       </section>

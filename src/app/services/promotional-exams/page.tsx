@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import {
   CheckCircle,
-  ArrowRight,
   Send,
   AlertCircle,
   FileCheck,
@@ -33,12 +32,12 @@ const examPurposeOptions = [
 ];
 
 const processSteps = [
-  { number: "1", label: "Inquiry Submitted" },
-  { number: "2", label: "Scope Review" },
-  { number: "3", label: "Exam Development or Selection" },
-  { number: "4", label: "Platform Setup" },
-  { number: "5", label: "Exam Administration" },
-  { number: "6", label: "Results and Appeals Support" },
+  { number: "1", label: "Inquiry Submitted", description: "Organization provides basic testing needs, number of candidates, exam purpose, and preferred timeline." },
+  { number: "2", label: "Scope Review", description: "GLA reviews exam type, source materials, customization needs, proctoring needs, and pricing category." },
+  { number: "3", label: "Exam Development or Selection", description: "Organization selects a standard exam or GLA develops a customized version using approved materials." },
+  { number: "4", label: "Platform Setup", description: "Exam is configured in the online platform with access controls, timing, instructions, and proctoring if needed." },
+  { number: "5", label: "Exam Administration", description: "Candidates complete the exam online individually or as part of a coordinated group testing process." },
+  { number: "6", label: "Results and Appeals Support", description: "GLA provides scoring support, reporting, and appeal review assistance when applicable." },
 ];
 
 const deliverables = [
@@ -239,36 +238,37 @@ Additional Notes: ${formData.additionalNotes || "None"}`,
       {/* Process */}
       <section className="bg-white py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-heading font-bold text-navy mb-10 text-center">
-            How It Works
+          <p className="text-sm font-semibold text-gold uppercase tracking-wider text-center mb-2">
+            Step by Step
+          </p>
+          <h2 className="text-3xl font-heading font-bold text-navy mb-12 text-center">
+            Online Promotional Exam Process
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {processSteps.map((step) => (
-              <div
-                key={step.number}
-                className="bg-gray-light rounded-[6px] p-6 border border-gray-200 flex items-start gap-4"
-              >
-                <div className="w-10 h-10 bg-navy rounded-[6px] flex items-center justify-center shrink-0">
-                  <span className="text-white font-bold text-sm">
-                    {step.number}
-                  </span>
+          <div className="max-w-4xl mx-auto">
+            {processSteps.map((step, i) => (
+              <div key={step.number} className="relative flex gap-6">
+                {/* Timeline line */}
+                <div className="flex flex-col items-center">
+                  <div className="w-12 h-12 bg-navy rounded-full flex items-center justify-center shrink-0 z-10 ring-4 ring-white">
+                    <span className="text-white font-bold text-sm">
+                      {step.number}
+                    </span>
+                  </div>
+                  {i < processSteps.length - 1 && (
+                    <div className="w-0.5 bg-navy/20 flex-1 min-h-8" />
+                  )}
                 </div>
-                <div>
-                  <h3 className="font-heading font-semibold text-navy">
+                {/* Content */}
+                <div className="pb-8">
+                  <h3 className="font-heading font-bold text-navy text-lg mb-1">
                     {step.label}
                   </h3>
+                  <p className="text-sm text-slate leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
               </div>
             ))}
-          </div>
-          <div className="mt-8 flex justify-center">
-            <div className="flex items-center gap-2 text-sm text-slate">
-              <ArrowRight size={16} className="text-gold" />
-              <span>
-                From inquiry to results, GLA manages the process so your team
-                can focus on operations.
-              </span>
-            </div>
           </div>
         </div>
       </section>

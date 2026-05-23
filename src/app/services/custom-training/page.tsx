@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import {
   CheckCircle,
-  ArrowRight,
   Send,
   AlertCircle,
   Wrench,
@@ -34,12 +33,12 @@ const courseLengthOptions = [
 ];
 
 const processSteps = [
-  { number: "1", label: "Training Inquiry" },
-  { number: "2", label: "Needs Review" },
-  { number: "3", label: "Training Plan" },
-  { number: "4", label: "Course Development" },
-  { number: "5", label: "Review and Revision" },
-  { number: "6", label: "Launch and Support" },
+  { number: "1", label: "Training Inquiry", description: "Organization submits the training need, target audience, timeline, and desired outcomes." },
+  { number: "2", label: "Needs Review", description: "GLA reviews the organization's goals, workforce challenges, learning audience, and delivery needs." },
+  { number: "3", label: "Training Plan", description: "GLA develops a recommended course structure, format, timeline, and development scope." },
+  { number: "4", label: "Course Development", description: "Content is developed using practical instructional design, assessment, and adult learning principles." },
+  { number: "5", label: "Review and Revision", description: "The organization reviews the course for accuracy, tone, policy alignment, and operational fit." },
+  { number: "6", label: "Launch and Support", description: "Course is launched in the online platform with access, tracking, and support as agreed." },
 ];
 
 const deliverables = [
@@ -262,36 +261,37 @@ Additional Notes: ${formData.additionalNotes || "None"}`,
       {/* Process */}
       <section className="bg-gray-light py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-heading font-bold text-navy mb-10 text-center">
-            How It Works
+          <p className="text-sm font-semibold text-gold uppercase tracking-wider text-center mb-2">
+            Step by Step
+          </p>
+          <h2 className="text-3xl font-heading font-bold text-navy mb-12 text-center">
+            Custom Training Development Process
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {processSteps.map((step) => (
-              <div
-                key={step.number}
-                className="bg-white rounded-[6px] p-6 border border-gray-200 flex items-start gap-4"
-              >
-                <div className="w-10 h-10 bg-navy rounded-[6px] flex items-center justify-center shrink-0">
-                  <span className="text-white font-bold text-sm">
-                    {step.number}
-                  </span>
+          <div className="max-w-4xl mx-auto">
+            {processSteps.map((step, i) => (
+              <div key={step.number} className="relative flex gap-6">
+                {/* Timeline line */}
+                <div className="flex flex-col items-center">
+                  <div className="w-12 h-12 bg-navy rounded-full flex items-center justify-center shrink-0 z-10 ring-4 ring-gray-light">
+                    <span className="text-white font-bold text-sm">
+                      {step.number}
+                    </span>
+                  </div>
+                  {i < processSteps.length - 1 && (
+                    <div className="w-0.5 bg-navy/20 flex-1 min-h-8" />
+                  )}
                 </div>
-                <div>
-                  <h3 className="font-heading font-semibold text-navy">
+                {/* Content */}
+                <div className="pb-8">
+                  <h3 className="font-heading font-bold text-navy text-lg mb-1">
                     {step.label}
                   </h3>
+                  <p className="text-sm text-slate leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
               </div>
             ))}
-          </div>
-          <div className="mt-8 flex justify-center">
-            <div className="flex items-center gap-2 text-sm text-slate">
-              <ArrowRight size={16} className="text-gold" />
-              <span>
-                Each step builds on the last so your training is developed with
-                clarity and purpose.
-              </span>
-            </div>
           </div>
         </div>
       </section>
