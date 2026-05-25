@@ -1,11 +1,13 @@
 import { createClient } from "@sanity/client";
 import { createImageUrlBuilder } from "@sanity/image-url";
 import type { SanityImage } from "@/types";
-import type { Course, Post } from "@/types";
+import type { Course, Series, Post } from "@/types";
 import {
   featuredCoursesQuery,
   allCoursesQuery,
   courseBySlugQuery,
+  allSeriesQuery,
+  seriesBySlugQuery,
   featuredPostsQuery,
   allPostsQuery,
   postBySlugQuery,
@@ -43,6 +45,22 @@ export async function getAllCourses(): Promise<Course[]> {
 export async function getCourseBySlug(slug: string): Promise<Course | null> {
   try {
     return await client.fetch(courseBySlugQuery, { slug });
+  } catch {
+    return null;
+  }
+}
+
+export async function getAllSeries(): Promise<Series[]> {
+  try {
+    return await client.fetch(allSeriesQuery);
+  } catch {
+    return [];
+  }
+}
+
+export async function getSeriesBySlug(slug: string): Promise<Series | null> {
+  try {
+    return await client.fetch(seriesBySlugQuery, { slug });
   } catch {
     return null;
   }

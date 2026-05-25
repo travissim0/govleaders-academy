@@ -14,6 +14,21 @@ export interface Course {
   featured: boolean;
 }
 
+export interface Series {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  description: string;
+  courses: Course[];
+  totalHours: number;
+  individualValue: number;
+  bundlePrice: number;
+  savings: number;
+  accessPeriod?: string;
+  learnworldsUrl: string;
+  featured: boolean;
+}
+
 export interface Post {
   _id: string;
   title: string;

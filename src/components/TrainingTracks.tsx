@@ -6,6 +6,7 @@ const series = [
     icon: Star,
     title: "Foundations of Public Sector Leadership",
     tag: "Flagship Series",
+    slug: "gla-flagship-series-foundations-of-public-sector-leadership",
     description: "Texas government, special purpose districts, public finance, and board decision-making.",
     courses: 4,
     contactHours: 30,
@@ -15,6 +16,7 @@ const series = [
     icon: Users,
     title: "New Board Member Series",
     tag: "Course Series",
+    slug: "new-board-member-series",
     description: "Roles, responsibilities, consultants, ethics, transparency, and meeting documentation.",
     courses: 4,
     contactHours: 22,
@@ -24,6 +26,7 @@ const series = [
     icon: Scale,
     title: "Water District Governance and Legal Series",
     tag: "Course Series",
+    slug: "water-district-governance-and-legal-series",
     description: "Open meetings, public records, rate-setting, risk, liability, and procurement.",
     courses: 4,
     contactHours: 24,
@@ -33,6 +36,7 @@ const series = [
     icon: Droplets,
     title: "Water District Operations and Leadership Series",
     tag: "Course Series",
+    slug: "water-district-operations-and-leadership-series",
     description: "MUD operations, water systems, communication, stakeholder engagement, and practical leadership.",
     courses: 4,
     contactHours: 22,
@@ -42,6 +46,7 @@ const series = [
     icon: Wrench,
     title: "Standalone Specialty Courses",
     tag: "Individual",
+    slug: "",
     description: "Focused topics including elections, parks planning, contract policing, and consultant guidance.",
     courses: 5,
     contactHours: 22,
@@ -68,7 +73,7 @@ export function TrainingTracks() {
           {series.map((item) => (
             <Link
               key={item.title}
-              href="/courses"
+              href={item.slug ? `/courses/series/${item.slug}` : "/courses"}
               className="group flex flex-col bg-white rounded-[6px] p-5 border border-gray-200 hover:border-gold/40 hover:shadow-md transition-all"
             >
               <div className="flex items-start justify-between mb-3">

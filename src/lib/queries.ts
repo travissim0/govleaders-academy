@@ -22,6 +22,16 @@ export const courseBySlugQuery = `*[_type == "course" && slug.current == $slug][
   _id, title, slug, shortDescription, category, audience, contactHours, price, level, accessPeriod, thumbnail, learnworldsUrl, featured
 }`;
 
+export const allSeriesQuery = `*[_type == "series"] | order(title asc) {
+  _id, title, slug, description, totalHours, individualValue, bundlePrice, savings, accessPeriod, learnworldsUrl, featured,
+  courses[]->{_id, title, slug, shortDescription, contactHours, level, audience}
+}`;
+
+export const seriesBySlugQuery = `*[_type == "series" && slug.current == $slug][0] {
+  _id, title, slug, description, totalHours, individualValue, bundlePrice, savings, accessPeriod, learnworldsUrl, featured,
+  courses[]->{_id, title, slug, shortDescription, contactHours, level, audience, price, category}
+}`;
+
 export const categoriesQuery = `*[_type == "category"] | order(title asc) {
   _id, title, slug, description
 }`;
