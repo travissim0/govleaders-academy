@@ -115,10 +115,8 @@ const placeholderCourses: Course[] = [
 
 function CourseCardItem({ course }: { course: Course }) {
   return (
-    <a
-      href={course.learnworldsUrl}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      href={`/courses/${course.slug.current}`}
       className="group bg-white rounded-[6px] border border-gray-200 overflow-hidden hover:shadow-xl transition-all hover:border-gold/40 hover:-translate-y-1 flex flex-col"
     >
       <div className="h-36 bg-gradient-to-br from-navy to-navy-light relative flex items-end p-4">
@@ -159,7 +157,7 @@ function CourseCardItem({ course }: { course: Course }) {
           <ArrowRight size={14} className="text-navy group-hover:text-gold transition-colors" />
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
 

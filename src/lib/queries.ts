@@ -18,6 +18,10 @@ export const postBySlugQuery = `*[_type == "post" && slug.current == $slug][0] {
   _id, title, slug, category, excerpt, body, featuredImage, author, publishDate, seoTitle, seoDescription
 }`;
 
+export const courseBySlugQuery = `*[_type == "course" && slug.current == $slug][0] {
+  _id, title, slug, shortDescription, category, audience, contactHours, price, level, accessPeriod, thumbnail, learnworldsUrl, featured
+}`;
+
 export const categoriesQuery = `*[_type == "category"] | order(title asc) {
   _id, title, slug, description
 }`;

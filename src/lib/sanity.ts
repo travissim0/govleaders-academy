@@ -5,6 +5,7 @@ import type { Course, Post } from "@/types";
 import {
   featuredCoursesQuery,
   allCoursesQuery,
+  courseBySlugQuery,
   featuredPostsQuery,
   allPostsQuery,
   postBySlugQuery,
@@ -36,6 +37,14 @@ export async function getAllCourses(): Promise<Course[]> {
     return await client.fetch(allCoursesQuery);
   } catch {
     return [];
+  }
+}
+
+export async function getCourseBySlug(slug: string): Promise<Course | null> {
+  try {
+    return await client.fetch(courseBySlugQuery, { slug });
+  } catch {
+    return null;
   }
 }
 

@@ -6,7 +6,9 @@ export interface Course {
   category: string;
   audience: string;
   contactHours: number;
+  price?: number;
   level: "Foundations" | "Intermediate" | "Advanced";
+  accessPeriod?: string;
   thumbnail?: SanityImage;
   learnworldsUrl: string;
   featured: boolean;
