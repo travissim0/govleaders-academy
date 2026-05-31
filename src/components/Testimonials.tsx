@@ -88,7 +88,9 @@ export function Testimonials() {
         </div>
 
         <p className="text-center text-xs text-slate mt-4 italic">
-          Placeholder testimonials for design purposes only.
+          Development Note: Testimonials and organization names shown in this section are
+          placeholders for layout review only and will be replaced with verified testimonials
+          before public launch.
         </p>
       </div>
     </section>

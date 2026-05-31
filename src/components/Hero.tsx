@@ -11,20 +11,15 @@ export function Hero() {
               <GraduationCap size={16} />
               Professional Development for Public Servants
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-navy leading-tight mb-6">
-              Online Training for Public-Sector Leaders
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-bold text-navy leading-tight mb-6">
+              Practical Online Training for Public-Sector Boards, Districts, and Local Government Leaders
             </h1>
-            <p className="text-lg text-slate mb-4 max-w-xl">
-              GovLeaders Academy provides structured online courses, professional development
-              resources, and specialized training solutions for local governments, special
-              districts, public safety professionals, elected and appointed officials, board
-              members, consultants, and the employees who support public-sector operations.
-            </p>
-            <p className="text-sm text-slate/80 mb-8 max-w-xl">
-              Built for the people who govern, manage, support, and advise
-              public-sector organizations, with an initial course focus on
-              special districts, MUDs, WCIDs, water districts, board members,
-              district staff, and the professionals who support them.
+            <p className="text-lg text-slate mb-8 max-w-xl">
+              GovLeaders Academy provides structured, self-paced courses that help public-sector
+              professionals understand governance, compliance, leadership, public finance, and
+              operational decision-making with confidence. Our training helps learners make more
+              informed decisions, reduce organizational risk, improve credibility, and demonstrate
+              a visible commitment to the communities and constituents they serve.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -35,20 +30,11 @@ export function Hero() {
                 Browse Courses
               </Link>
               <Link
-                href="/courses#series"
+                href="/services/custom-training"
                 className="inline-flex items-center gap-2 px-9 py-4 border border-navy text-navy text-[17px] font-semibold rounded-[6px] hover:bg-gray-light transition-colors"
               >
-                View Course Series
+                Explore Organization Options
               </Link>
-              <a
-                href="https://learn.govleadersacademy.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-9 py-4 bg-white border border-navy text-navy text-[17px] font-semibold rounded-[6px] hover:bg-gray-light transition-colors"
-              >
-                <ExternalLink size={18} />
-                Enter Learning Portal
-              </a>
             </div>
           </div>
 

@@ -1,10 +1,10 @@
-import { Search, ListChecks, UserPlus, Award, ArrowRight } from "lucide-react";
+import { Search, UserPlus, ListChecks, Award, ArrowRight } from "lucide-react";
 
 const steps = [
-  { icon: Search, step: "1", title: "Browse Courses and Series", description: "Explore individual courses, Course Series, and specialty topics designed for public-sector work." },
-  { icon: ListChecks, step: "2", title: "Select the Training That Fits", description: "Choose one course, several individual courses, a full Course Series, or an organizational training option." },
-  { icon: UserPlus, step: "3", title: "Enroll Through the Learning Portal", description: "Course enrollment, access, payments, certificates, and progress tracking are handled through the GLA Learning Portal." },
-  { icon: Award, step: "4", title: "Complete and Apply", description: "Complete training online and apply practical knowledge to board service, district operations, leadership, governance, public safety, or professional development." },
+  { icon: Search, step: "1", title: "Choose Your Path", description: "Select an individual course, course series, organization option, or custom training pathway." },
+  { icon: UserPlus, step: "2", title: "Enroll Through the Learning Portal", description: "Learners access courses through the dedicated GLA Learning Portal powered by LearnWorlds." },
+  { icon: ListChecks, step: "3", title: "Complete Structured Training", description: "Work through self-paced modules, practical examples, knowledge checks, scenarios, and assessments." },
+  { icon: Award, step: "4", title: "Earn Certificates and Apply", description: "Document completion, strengthen credibility, and use the training to make more informed public-sector decisions." },
 ];
 
 export function HowItWorks() {
