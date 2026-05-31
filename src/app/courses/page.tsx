@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { TrainingTracks } from "@/components/TrainingTracks";
-import { FeaturedCourses } from "@/components/CourseCard";
+import { FeaturedCourses, CourseCardItem, placeholderCourses } from "@/components/CourseCard";
 import { ExternalLink } from "lucide-react";
-import { getFeaturedCourses } from "@/lib/sanity";
+import { getFeaturedCourses, getAllCourses } from "@/lib/sanity";
 
 export const revalidate = 60;
 
@@ -12,7 +12,10 @@ export const metadata: Metadata = {
 };
 
 export default async function CoursesPage() {
-  const courses = await getFeaturedCourses();
+  const [courses, allCourses] = await Promise.all([
+    getFeaturedCourses(),
+    getAllCourses(),
+  ]);
 
   return (
     <>
@@ -70,6 +73,26 @@ export default async function CoursesPage() {
               >
                 <p className="text-sm font-semibold text-navy">{topic}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* All Courses */}
+      <section className="bg-white py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-bold text-navy mb-3">
+              All Courses
+            </h2>
+            <p className="text-slate max-w-2xl mx-auto">
+              Browse the complete GLA catalog. Take a single course for focused professional
+              development or complete a full Course Series.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {(allCourses.length > 0 ? allCourses : placeholderCourses).map((course) => (
+              <CourseCardItem key={course._id} course={course} />
             ))}
           </div>
         </div>

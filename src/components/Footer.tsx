@@ -7,7 +7,7 @@ const footerLinks = {
     { href: "/about", label: "About Us" },
     { href: "/careers", label: "Careers" },
     { href: "/contact", label: "Contact" },
-    { href: "/insights", label: "Insights and Guides" },
+    { href: "/resources", label: "Resources" },
   ],
   Services: [
     { href: "/courses", label: "Course Catalog" },
