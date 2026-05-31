@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Clock, BarChart3, ArrowRight, ExternalLink, Monitor } from "lucide-react";
+import { Clock, BarChart3, ArrowRight, ExternalLink, Monitor, Award, Users } from "lucide-react";
 import type { Course } from "@/types";
 
 const courseTags: Record<string, string[]> = {
@@ -143,18 +143,28 @@ function CourseCardItem({ course }: { course: Course }) {
         <p className="text-sm text-slate mb-3 line-clamp-2 leading-relaxed flex-1">
           {course.shortDescription}
         </p>
-        <div className="flex items-center justify-between pt-3 border-t border-gray-100 mt-auto">
-          <div className="flex items-center gap-3 text-xs text-slate">
-            <span className="flex items-center gap-1">
-              <Clock size={12} />
-              {course.contactHours} hrs
-            </span>
-            <span className="flex items-center gap-1">
-              <BarChart3 size={12} />
-              {course.level}
-            </span>
-          </div>
-          <ArrowRight size={14} className="text-navy group-hover:text-gold transition-colors" />
+        <div className="flex items-center gap-2 text-xs text-slate mb-3">
+          <Users size={11} className="shrink-0" />
+          <span>Best for: {course.audience}</span>
+        </div>
+        <div className="flex items-center gap-4 text-xs text-slate mb-3">
+          <span className="flex items-center gap-1">
+            <Clock size={12} />
+            {course.contactHours} hrs
+          </span>
+          <span className="flex items-center gap-1">
+            <BarChart3 size={12} />
+            {course.level}
+          </span>
+          <span className="flex items-center gap-1 text-gold">
+            <Award size={12} />
+            Certificate
+          </span>
+        </div>
+        <div className="pt-3 border-t border-gray-100 mt-auto">
+          <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-navy group-hover:text-gold transition-colors">
+            View Course <ArrowRight size={12} />
+          </span>
         </div>
       </div>
     </Link>
