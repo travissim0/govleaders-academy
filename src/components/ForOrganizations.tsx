@@ -29,7 +29,7 @@ export function ForOrganizations() {
               or annual access options to provide consistent, practical training across teams.
             </p>
             <Link
-              href="/services/custom-training"
+              href="/for-organizations"
               className="inline-flex items-center px-8 py-3.5 bg-navy text-white font-semibold rounded-[6px] hover:bg-navy-dark transition-colors"
             >
               Explore Organization Options

@@ -31,7 +31,7 @@ const paths = [
       "Professional associations",
     ],
     cta: "Explore Organization Options",
-    href: "/services/custom-training",
+    href: "/for-organizations",
   },
   {
     icon: Wrench,

@@ -30,7 +30,7 @@ export function Hero() {
                 Browse Courses
               </Link>
               <Link
-                href="/services/custom-training"
+                href="/for-organizations"
                 className="inline-flex items-center gap-2 px-9 py-4 border border-navy text-navy text-[17px] font-semibold rounded-[6px] hover:bg-gray-light transition-colors"
               >
                 Explore Organization Options

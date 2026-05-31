@@ -52,7 +52,7 @@ export default function AboutPage() {
               Browse Courses
             </Link>
             <Link
-              href="/services/custom-training"
+              href="/for-organizations"
               className="inline-flex items-center gap-2 px-8 py-3.5 border border-white/30 text-white font-semibold rounded-[6px] hover:bg-white/10 transition-colors"
             >
               Explore Organization Options
