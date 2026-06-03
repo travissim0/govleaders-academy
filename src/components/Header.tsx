@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { useAuth, UserButton, SignInButton } from "@clerk/nextjs";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -17,7 +16,6 @@ const navLinks = [
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { isSignedIn } = useAuth();
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
@@ -52,23 +50,14 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            {isSignedIn ? (
-              <>
-                <Link
-                  href="/dashboard"
-                  className="text-[15px] font-semibold text-dark-text hover:text-navy transition-colors"
-                >
-                  Dashboard
-                </Link>
-                <UserButton />
-              </>
-            ) : (
-              <SignInButton mode="redirect">
-                <button className="inline-flex items-center px-7 py-3 bg-navy text-white text-[16px] font-semibold rounded-[6px] hover:bg-navy-dark transition-colors">
-                  Sign In
-                </button>
-              </SignInButton>
-            )}
+            <a
+              href="https://learn.govleadersacademy.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-7 py-3 bg-navy text-white text-[16px] font-semibold rounded-[6px] hover:bg-navy-dark transition-colors"
+            >
+              Learning Portal
+            </a>
           </nav>
 
           <button
@@ -94,21 +83,14 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            {isSignedIn ? (
-              <Link
-                href="/dashboard"
-                className="block text-[15px] font-semibold text-dark-text hover:text-navy transition-colors"
-                onClick={() => setMobileOpen(false)}
-              >
-                My Dashboard
-              </Link>
-            ) : (
-              <SignInButton mode="redirect">
-                <button className="block w-full text-center px-7 py-3 bg-navy text-white text-[16px] font-semibold rounded-[6px] hover:bg-navy-dark transition-colors">
-                  Sign In
-                </button>
-              </SignInButton>
-            )}
+            <a
+              href="https://learn.govleadersacademy.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-center px-7 py-3 bg-navy text-white text-[16px] font-semibold rounded-[6px] hover:bg-navy-dark transition-colors"
+            >
+              Learning Portal
+            </a>
           </div>
         </div>
       )}

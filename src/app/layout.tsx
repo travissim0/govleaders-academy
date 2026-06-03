@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -50,27 +49,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en" className={raleway.variable}>
-        <body className="min-h-screen flex flex-col antialiased">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          {process.env.NEXT_PUBLIC_GA_ID && (
-            <>
-              <script
-                async
-                src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-              />
-              <script
-                dangerouslySetInnerHTML={{
-                  __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${process.env.NEXT_PUBLIC_GA_ID}');`,
-                }}
-              />
-            </>
-          )}
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en" className={raleway.variable}>
+      <body className="min-h-screen flex flex-col antialiased">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${process.env.NEXT_PUBLIC_GA_ID}');`,
+              }}
+            />
+          </>
+        )}
+      </body>
+    </html>
   );
 }
